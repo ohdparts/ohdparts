@@ -1,0 +1,218 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "NotificationService"
+provides-nominal:
+- "37OneSignalNotificationServiceExtension0cD0C"
+provides-member:
+- ["37OneSignalNotificationServiceExtension0cD0C", ""]
+provides-dynamic-lookup:
+- "didReceive"
+- "serviceExtensionTimeWillExpire"
+depends-top-level:
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- "NotificationService"
+- !private "StringLiteralType"
+- "UNMutableNotificationContent"
+- "UNNotificationContent"
+- "UNNotificationRequest"
+- "UNNotificationServiceExtension"
+- "Void"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["s7CVarArgP", "bestAttemptContent"]
+- !private ["s7CVarArgP", "content"]
+- !private ["s7CVarArgP", "contentHandler"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "mutableCopy"]
+- !private ["s7CVarArgP", "title"]
+- ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "bestAttemptContent"]
+- !private ["s28CustomDebugStringConvertibleP", "content"]
+- !private ["s28CustomDebugStringConvertibleP", "contentHandler"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "mutableCopy"]
+- !private ["s28CustomDebugStringConvertibleP", "title"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "bestAttemptContent"]
+- !private ["s23CustomStringConvertibleP", "content"]
+- !private ["s23CustomStringConvertibleP", "contentHandler"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "mutableCopy"]
+- !private ["s23CustomStringConvertibleP", "title"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "bestAttemptContent"]
+- !private ["s9EquatableP", "content"]
+- !private ["s9EquatableP", "contentHandler"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "mutableCopy"]
+- !private ["s9EquatableP", "title"]
+- ["s9EquatableP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "bestAttemptContent"]
+- !private ["s8HashableP", "content"]
+- !private ["s8HashableP", "contentHandler"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "mutableCopy"]
+- !private ["s8HashableP", "title"]
+- ["s8HashableP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "content"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "mutableCopy"]
+- !private ["So8NSCodingP", "title"]
+- !private ["So9NSCopyingP", "content"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "mutableCopy"]
+- !private ["So9NSCopyingP", "title"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So16NSMutableCopyingP", "mutableCopy"]
+- !private ["So16NSMutableCopyingP", "title"]
+- ["So8NSObjectC", "UNMutableNotificationContent"]
+- ["So8NSObjectC", "UNNotificationContent"]
+- ["So8NSObjectC", "UNNotificationRequest"]
+- ["So8NSObjectC", "Void"]
+- ["So8NSObjectC", "bestAttemptContent"]
+- !private ["So8NSObjectC", "content"]
+- ["So8NSObjectC", "contentHandler"]
+- ["So8NSObjectC", "didReceive"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "mutableCopy"]
+- ["So8NSObjectC", "serviceExtensionTimeWillExpire"]
+- !private ["So8NSObjectC", "title"]
+- !private ["So16NSObjectProtocolP", "bestAttemptContent"]
+- !private ["So16NSObjectProtocolP", "content"]
+- !private ["So16NSObjectProtocolP", "contentHandler"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "mutableCopy"]
+- !private ["So16NSObjectProtocolP", "title"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So14NSSecureCodingP", "content"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "mutableCopy"]
+- !private ["So14NSSecureCodingP", "title"]
+- !private ["So8NSStringC", "init"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "UNMutableNotificationContent"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "UNNotificationContent"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "UNNotificationRequest"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "Void"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "bestAttemptContent"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "contentHandler"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "deinit"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "didReceive"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "init"]
+- ["37OneSignalNotificationServiceExtension0cD0C", "serviceExtensionTimeWillExpire"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So28UNMutableNotificationContentC", "title"]
+- !private ["So21UNNotificationContentC", "mutableCopy"]
+- !private ["So21UNNotificationContentC", "title"]
+- !private ["So21UNNotificationRequestC", "content"]
+- ["So30UNNotificationServiceExtensionC", "UNMutableNotificationContent"]
+- ["So30UNNotificationServiceExtensionC", "UNNotificationContent"]
+- ["So30UNNotificationServiceExtensionC", "UNNotificationRequest"]
+- ["So30UNNotificationServiceExtensionC", "Void"]
+- ["So30UNNotificationServiceExtensionC", "bestAttemptContent"]
+- ["So30UNNotificationServiceExtensionC", "contentHandler"]
+- ["So30UNNotificationServiceExtensionC", "didReceive"]
+- ["So30UNNotificationServiceExtensionC", "init"]
+- ["So30UNNotificationServiceExtensionC", "serviceExtensionTimeWillExpire"]
+- ["So30UNNotificationServiceExtensionC", ""]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bestAttemptContent"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "content"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "contentHandler"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "mutableCopy"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "title"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- "37OneSignalNotificationServiceExtension0cD0C"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So28UNMutableNotificationContentC"
+- !private "So21UNNotificationContentC"
+- !private "So21UNNotificationRequestC"
+- "So30UNNotificationServiceExtensionC"
+- !private "s23_BidirectionalIndexableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+interface-hash: "4403ee5728c4f50b78fce6660e672348"

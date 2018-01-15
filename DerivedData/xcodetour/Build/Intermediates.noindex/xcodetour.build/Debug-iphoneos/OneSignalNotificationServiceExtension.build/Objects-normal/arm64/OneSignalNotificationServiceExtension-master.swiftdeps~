@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
+options: "40f8181908fc388a098382771396034e"
+build_time: [1511825409, 950308000]
+inputs:
+  "/Users/jarradprida/Downloads/xcodetour/OneSignalNotificationServiceExtension/NotificationService.swift": [1511825400, 0]

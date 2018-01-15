@@ -1,0 +1,21 @@
+version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
+options: "61bc710c0da65a193c98889f7ac66df3"
+build_time: [1511844090, 361009000]
+inputs:
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/ReceivingVC.swift": [1500663139, 0]
+  "/Users/jarradprida/Downloads/xcodetour/Sub_Prodcut_Cat.swift": [1501880064, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1g_ViewController.swift": [1507744956, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/SendingVC.swift": [1499899365, 0]
+  "/Users/jarradprida/Downloads/xcodetour/1c_ViewController.swift": [1503440021, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/ViewController.swift": [1511813775, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1k_ViewController.swift": [1499892931, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1f_ViewController.swift": [1511813579, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1i_ViewController.swift": [1502062084, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1e_ViewController.swift": [1504212079, 0]
+  "/Users/jarradprida/Downloads/xcodetour/1h_ViewController.swift": [1507750873, 0]
+  "/Users/jarradprida/Downloads/xcodetour/product_catalog.swift": [1501543384, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/AppDelegate.swift": [1497305078, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1b_ViewController.swift": [1483161417, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/jj_ViewController.swift": [1499892931, 0]
+  "/Users/jarradprida/Downloads/xcodetour/xcodetour/1a_TableViewCell.swift": [1499815985, 0]
+  "/Users/jarradprida/Downloads/xcodetour/show_product.swift": [1502658372, 0]

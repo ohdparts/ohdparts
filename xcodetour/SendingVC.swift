@@ -37,7 +37,7 @@ class SendingVC: UIViewController {
         
         view.addGestureRecognizer(tap)
         
- 
+     state.autocapitalizationType = .allCharacters
         
         let button = UIButton.init(type: .custom)
         button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
@@ -71,13 +71,24 @@ class SendingVC: UIViewController {
         UserDefaults.standard.set(phone_number.text, forKey: "phone")
         UserDefaults.standard.set(email_address.text, forKey: "email")
         
-        
-        
+        if company_name.text == "" || address.text == "" || state.text == "" || city.text == "" || zip.text == "" || name.text == "" || phone_number.text == "" || email_address.text == "" {
+            
+            var refreshAlert = UIAlertView()
+            refreshAlert.title = "Customer Information"
+            refreshAlert.message = "Customer information has not been saved. One or more required parameters is missing"
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.show()
+            
+        }
+        else{
+
         var refreshAlert = UIAlertView()
         refreshAlert.title = "Customer Information"
         refreshAlert.message = "Customer information has been saved to this device and can be changed or deleted at any time. "
         refreshAlert.addButton(withTitle: "OK")
         refreshAlert.show()
+            
+        }
     }
 
     @IBAction func Info_Button(_ sender: UIButton) {
@@ -91,7 +102,7 @@ class SendingVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         var x = UserDefaults.standard.object(forKey: "company") as? String
         if x == ""{
-            company_name.text = "Company Name"
+            company_name.text = ""
         }
         else{
             company_name.text = x
@@ -99,7 +110,7 @@ class SendingVC: UIViewController {
         
         var w = UserDefaults.standard.object(forKey: "address") as? String
         if w == "" {
-            address.text = "Ship To Address"
+            address.text = ""
         }
         else{
             address.text = w
@@ -107,7 +118,7 @@ class SendingVC: UIViewController {
         
         var s = UserDefaults.standard.object(forKey: "city") as? String
         if s == ""{
-            city.text = "City"
+            city.text = ""
         }
         else{
             city.text = s
@@ -115,7 +126,7 @@ class SendingVC: UIViewController {
         
         var t = UserDefaults.standard.object(forKey: "zip") as? String
         if t == ""{
-            zip.text = "Zip Code"
+            zip.text = ""
         }
         else{
             zip.text = t
@@ -123,7 +134,7 @@ class SendingVC: UIViewController {
         
         var y = UserDefaults.standard.object(forKey: "name") as? String
         if y == ""{
-            name.text = "Customer Name"
+            name.text = ""
         }
         else{
             name.text = y
@@ -131,21 +142,21 @@ class SendingVC: UIViewController {
         
         var z = UserDefaults.standard.object(forKey: "state") as? String
         if z == ""{
-            state.text = "State"
+            state.text = ""
         }
         else{
             state.text = z
         }
         var u = UserDefaults.standard.object(forKey: "phone") as? String
         if u == ""{
-            phone_number.text = "Phone Number"
+            phone_number.text = ""
         }
         else{
             phone_number.text = u
         }
         var v = UserDefaults.standard.object(forKey: "email") as? String
         if v == "" {
-            email_address.text = "Email Address"
+            email_address.text = ""
         }
         else{
             email_address.text = v

@@ -409,8 +409,20 @@ wire_calc_stepper: for k in PSI_Factor {
  
     
     @IBAction func next(_ sender: Any) {
+        
+        if Wire_Length == 0 {
+            var refreshAlert = UIAlertView()
+            refreshAlert.title = "Parameters Missing"
+            refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.show()
+        }
+        else {
         self.performSegue(withIdentifier: "segue_1", sender: nil)
+        }
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var destview1: _f_ViewController = segue.destination as! _f_ViewController
         destview1.spring_id = spr_id

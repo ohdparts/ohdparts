@@ -511,14 +511,27 @@ class _e_ViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: Any) {
-        if labeltext2 == "duplex" {
-    self.performSegue(withIdentifier: "segue1", sender: nil)
+       
+        if width == "0" || height == "0" || weight == "0" {
+            var refreshAlert = UIAlertView()
+            refreshAlert.title = "Parameters Missing"
+            refreshAlert.message = ("One or more required parameters is missing for door width, height, or weight")
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.show()
         }
-        else{
-    self.performSegue(withIdentifier: "segue", sender: nil)
+            else {
+              
+                if labeltext2 == "duplex" {
+                    self.performSegue(withIdentifier: "segue1", sender: nil)
+                        }
+                else {
+                    self.performSegue(withIdentifier: "segue", sender: nil)
+                    
+                }
             }
-    }
-    
+  }
+
+        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

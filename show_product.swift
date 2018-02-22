@@ -85,7 +85,14 @@ let Weather_Seal_180_Retainer_pic = ["Yes","Yes","Yes"]
 let Weather_Seal_90_and_180_Retainer_pic = ["Yes","Yes","Yes"]
 let Weather_Seal_Clipon_Jamb_Seal_pic = ["Yes","Yes","Yes","Yes"]
 let Weather_Seal_Reverse_Angle_Jamb_Seal_pic = ["Yes","Yes","Yes","Yes"]
-
+let Operator_Accesories_Genie_pic = ["No","No","No","No","No","No"]
+let Operator_Parts_Genie_pic = ["No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No"]
+let Operator_Parts_LiftMaster_pic = ["No","No","No","No","No","No","No","No"]
+let Operator_Accesories_LiftMaster_pic = ["No","No","No","No","No","No","No","No","No","No","No"]
+let Operator_Accesories_Linear_pic = ["No","No","No","No","No","No","No","No"]
+let Operator_Packages_Genie_pic = ["No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No"]
+let Operator_Packages_Linear_pic = ["No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No"]
+let Operator_Packages_LiftMaster_pic = ["No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No","No"]
 
 
 
@@ -168,7 +175,14 @@ let Weather_Seal_180_Retainer_uom = ["Each","Each","Each"]
 let Weather_Seal_90_and_180_Retainer_uom = ["Each","Each","Each"]
 let Weather_Seal_Clipon_Jamb_Seal_uom = ["Box","Box","Box","Box"]
 let Weather_Seal_Reverse_Angle_Jamb_Seal_uom = ["Box","Box","Box","Box"]
-
+let Operator_Accesories_Genie_uom = ["Each","Each","Each","Each","Each","Each"]
+let Operator_Parts_Genie_uom = ["Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Parts_LiftMaster_uom = ["Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Accesories_LiftMaster_uom = ["Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Accesories_Linear_uom = ["Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Packages_Genie_uom = ["Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Packages_Linear_uom = ["Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each"]
+let Operator_Packages_LiftMaster_uom = ["Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each","Each"]
 
 
 
@@ -621,6 +635,52 @@ class show_product: UIViewController {
             uom = Weather_Seal_Reverse_Angle_Jamb_Seal_uom
             pic = Weather_Seal_Reverse_Angle_Jamb_Seal_pic
         }
+        if pn == "Operator_Accesories_Genie"{
+            part = Operator_Accesories_Genie_pn
+            uom = Operator_Accesories_Genie_uom
+            pic = Operator_Accesories_Genie_pic
+        }
+        if pn == "Operator_Parts_Genie"{
+            part = Operator_Parts_Genie_pn
+            uom = Operator_Parts_Genie_uom
+            pic = Operator_Parts_Genie_pic
+        }
+        if pn == "Operator_Parts_LiftMaster"{
+            part = Operator_Parts_LiftMaster_pn
+            uom = Operator_Parts_LiftMaster_uom
+            pic = Operator_Parts_LiftMaster_pic
+        }
+        if pn == "Operator_Accesories_LiftMaster"{
+            part = Operator_Accesories_LiftMaster_pn
+            uom = Operator_Accesories_LiftMaster_uom
+            pic = Operator_Accesories_LiftMaster_pic
+        }
+        if pn == "Operator_Accesories_Linear"{
+            part = Operator_Accesories_Linear_pn
+            uom = Operator_Accesories_Linear_uom
+            pic = Operator_Accesories_Linear_pic
+        }
+        if pn == "Operator_Packages_Linear"{
+            part = Operator_Packages_Linear_pn
+            uom = Operator_Packages_Linear_uom
+            pic = Operator_Packages_Linear_pic
+        }
+        if pn == "Operator_Packages_Genie"{
+            part = Operator_Packages_Genie_pn
+            uom = Operator_Packages_Genie_uom
+            pic = Operator_Packages_Genie_pic
+        }
+        if pn == "Operator_Packages_LiftMaster"{
+            part = Operator_Packages_LiftMaster_pn
+            uom = Operator_Packages_LiftMaster_uom
+            pic = Operator_Packages_LiftMaster_pic
+        }
+
+        
+        
+        
+        //"", "", "", "", "", "", "", "",
+
 
         prodcut_description_label.text = yourArray[product_index]
         part_number.text = part[product_index]

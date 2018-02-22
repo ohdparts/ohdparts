@@ -228,7 +228,17 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
         
     @IBAction func next(_ sender: Any) {
-        self.performSegue(withIdentifier: "segue", sender: nil)
+        if sprg_weight == 0 {
+            var refreshAlert = UIAlertView()
+            refreshAlert.title = "Parameters Missing"
+            refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.show()
+        }
+        else {
+            
+            self.performSegue(withIdentifier: "segue", sender: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var destview1: _f_ViewController = segue.destination as! _f_ViewController

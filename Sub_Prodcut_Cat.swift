@@ -91,6 +91,14 @@ let Bottom_Brackets_Residential_pn = ["290992","290991","270355","270354","85001
     let Weather_Seal_90_and_180_Retainer_pn = ["609288.0011","609288.0039","609288.0012"]
     let Weather_Seal_Clipon_Jamb_Seal_pn = ["407100.0202","407100.0201","407100.0204","407100.0203"]
     let Weather_Seal_Reverse_Angle_Jamb_Seal_pn = ["RS-175-WT","RS-175-AL","RS-175-SD","RS-175-BR"]
+let Operator_Accesories_Genie_pn = ["37344R","37517S","38501R","37218R","37220R"]
+let Operator_Parts_Genie_pn = ["24030A.S","18004B.S","19988A.S","107871.0001.S","25605R.S","27096A.S","36179R.S","20113R.S","30257T.S","36453A.S","OPAKPEN4GX.S","19792A04.S","19806A04.S","19807A04.S","38877R.S","OPABTCX.S","39438R"]
+let Operator_Parts_LiftMaster_pn = ["345161","343092","342011","342028","342045","041C4220A","342007","342016"]
+let Operator_Accesories_LiftMaster_pn = ["324817","324819","340996","340995","353247","349704","349700","349698","349699","349697","342053"]
+let Operator_Accesories_Linear_pn = ["DNT00089","DNT00058","DNT00090","MCS1011","MCS2022","DNT00002A","DNR00001","DNT00062"]
+let Operator_Packages_Linear_pn = ["LDO50_7B","LDO50_8B","LDO50_7C","LDO50_8C","LDO50_10C","LSO50_7B","LSO50_8B","LSO50_7C","LSO50_8C","LSO50_10C","LDCO800_7B","LDCO800_8B","LDCO800_7C","LDCO800_8C","LDCO800_10C","LDCO850_7B","LDCO850_8B","LDCO850_7C","LDCO850_8C","LDCO850_10C"]
+let Operator_Packages_Genie_pn = ["38480S_7B","38480S_8B","38480S_10B","38480S_7C","38480S_8C","38480S_10C","37044R_7B","37044R_8B","37044R_10B","37044R_7C","37044R_8C","37044R_10C","37044S_7B","37044S_8B","37044S_10B","37044S_7C","37044S_8C","37044S_10C"]
+let Operator_Packages_LiftMaster_pn = ["360892_7B","360892_8B","360892_10B","352298_7B","352298_8B","352298_10B","352293_7B","352293_8B","352293_10B","355047_7C","355047_8C","355047_10C","324413_7C","324413_8C","324413_10C","500280.0001_7C","500280.0001_8C","500280.0001_10C","361900_7C","361900_8C","361900_10C","352294_7C","352294_8C","352294_10C","352294_12C","352294_14C","349037","349040","351330"]
 
 
 
@@ -176,6 +184,14 @@ let Weather_Seal_180_Retainer_desc = ["1-1/4\" x 180 x 6' Aluminum Retainer","1-
 let Weather_Seal_90_and_180_Retainer_desc = ["1-7/8\" x 90 & 180 x 6' Alum. Retainer","1-7/8\" x 90 & 180 x 8' Alum. Retainer","1-7/8\" x 90 & 180 x 12' Alum. Retainer"]
 let Weather_Seal_Clipon_Jamb_Seal_desc = ["JS-02 Clip-on RA Jamb Seal - Brown","JS-02 Clip-on RA Jamb Seal - Gray","JS-02 Clip-on RA Jamb Seal - White","JS-02 Clip-on RA Jamb Seal - Black"]
 let Weather_Seal_Reverse_Angle_Jamb_Seal_desc = ["RS-175 Reverse Jamb Angle Seal - White","RS-175 Reverse Jamb Angle Seal - Almond","RS-175 Reverse Jamb Angle Seal - Sandstone","RS-175 Reverse Jamb Angle Seal - Brown"]
+let Operator_Accesories_Genie_desc = ["GM3T - GenieMaster","GITR-3 - 3-Button Remote","G1T-BX - 1-Button Remote","G3T-BX - 3-Button Remote","GSTB-BX - Safe-T-Beam System"]
+let Operator_Parts_Genie_desc = ["12v Battery","50 MFD Capacitor","70 MFD Capacitor","54 MFD Capacitor, 220VAC","Inner Slide","Gear Worm ","Carriage Assy, Screw Drive","Limit Switch ","Coupler Tube Assy ","Carriage Assy, G-SR04","Photoeye Kit, NEMA-4","Door Bracket ","Drive Screw Collar","Retaining Clip","Control Board - Non-configured ","Timer-to-close Module ","Genie LED Light Bulb"]
+let Operator_Parts_LiftMaster_desc = ["041A3489 - Trolley Kit, T-Rail","041A5034 - Safety Reversing Sensors","041A4885-5 - Belt Drive Gear and Sprocket Kit","041A5658 - Dual Gear and Sprocket Kit","041A5668 - Gear and Sprocket Kit, ATS","041C4220A - Chain Drive Gear and Sprocket Kit","041C4398A - RPM Sensor Kit","144C0056 - Square Rail Idler Pulley"]
+let Operator_Accesories_LiftMaster_desc = ["371LM - Security+ Single-Button Remote - 315MHz","373LM - Security+ 3-Button Remote Control - 315MHz","375UT - 2-Button Universal Remote Control","387LM - Universal Keyless Entry","821LM - Universal Smartphone Garage Door Controller","828LM - LiftMaster Internet Gateway","890MAX - 3-Button Mini Remote Control","891LM - 1-Button Remote Control","893LM - 3-Button Remote Control","893MAX - 3-Button Remote Control","971LM - Security+ Single-Button Remote - 390MHz"]
+let Operator_Accesories_Linear_desc = ["DNT00089 - 3-Button MCT-3 Visor Transmitter","DNT00058 - Model Wireless MDTK Keypad Transmitter","DNT00090 - 1-Channel Visor Transmitter","1011 - Multi Single, 300MHz","2022 - Multi Double, 300MHz","DNT00002A - Delta 3 Remote ","DNR00001 - Delta 3 Receiver ","DNT00062 - Delta 3 Keypad Transmitter"]
+let Operator_Packages_Linear_desc = ["1/2 HP DELUXE + 7' BELT ","1/2 HP DELUXE + 8' BELT","1/2 HP DELUXE + 7' CHAIN","1/2 HP DELUXE + 8' CHAIN","1/2 HP DELUXE + 10' CHAIN","1/2 HP PREMINUM + 7' BELT ","1/2 HP PREMINUM + 8' BELT","1/2 HP PREMINUM + 7' CHAIN","1/2 HP PREMINUM + 8' CHAIN","1/2 HP PREMINUM + 10' CHAIN","800N ADVANCED DC + 7' BELT ","800N ADVANCED DC + 8' BELT","800N ADVANCED DC + 7' CHAIN","800N ADVANCED DC + 8' CHAIN","800N ADVANCED DC + 10' CHAIN","Linear Pro Access - 1/2 HP + 7' BELT ","Linear Pro Access - 1/2 HP + 8' BELT","Linear Pro Access - 1/2 HP + 7' CHAIN","Linear Pro Access - 1/2 HP + 8' CHAIN","Linear Pro Access - 1/2 HP + 10' CHAIN"]
+let Operator_Packages_Genie_desc = ["ReliaG 850, 2028 + 7' BELT ","ReliaG 850, 2028 + 8' BELT","ReliaG 850, 2028 + 10' BELT","ReliaG 850, 2028 + 7' CHAIN","ReliaG 850, 2028 + 8' CHAIN","ReliaG 850, 2028 + 10' CHAIN","IntelliG 1000, 3024 + 7' BELT ","IntelliG 1000, 3024 + 8' BELT","IntelliG 1000, 3024 + 10' BELT","IntelliG 1000, 3024 + 7' CHAIN","IntelliG 1000, 3024 + 8' CHAIN","IntelliG 1000, 3024 + 10' CHAIN","IntelliG 1200, 4024 + 7' BELT ","IntelliG 1200, 4024 + 8' BELT","IntelliG 1200, 4024 + 10' BELT","IntelliG 1200, 4024 + 7' CHAIN","IntelliG 1200, 4024 + 8' CHAIN","IntelliG 1200, 4024 + 10' CHAIN"]
+let Operator_Packages_LiftMaster_desc = ["8355W + 7' BELT ","8355W + 8' BELT","8355W + 10' BELT","8550W + 7' BELT ","8550W + 8' BELT","8550W + 10' BELT","8557W + 7' BELT ","8557W + 8' BELT","8557W + 10' BELT","8065 + 7' CHAIN","8065 + 8' CHAIN","8065 + 10' CHAIN","8165 + 7' CHAIN","8165 + 8' CHAIN","8165 + 10' CHAIN","8360W + 7' CHAIN","8360W + 8' CHAIN","8360W + 10' CHAIN","8365W-267 + 7' CHAIN","8365W-267 + 8' CHAIN","8365W-267 + 10' CHAIN","8587W + 7' CHAIN","8587W + 8' CHAIN","8587W + 10' CHAIN","8587W + 12' CHAIN","8587W + 14' CHAIN","3900 LD JACKSHAFT","3950,LD JACKSHAFT","8500LM,RES JACKSHAFT"]
 
 
 
@@ -452,6 +468,33 @@ class Sub_Prodcut_Cat: UIViewController,UITableViewDelegate, UITableViewDataSour
         if catagory == ["Weather_Seal_Reverse_Angle_Jamb_Seal"]{
             yourArray = Weather_Seal_Reverse_Angle_Jamb_Seal_desc
         }
+        if catagory == ["Operator_Accesories_Genie"]{
+            yourArray = Operator_Accesories_Genie_desc
+        }
+        if catagory == ["Operator_Parts_Genie"]{
+            yourArray = Operator_Parts_Genie_desc
+        }
+        if catagory == ["Operator_Parts_LiftMaster"]{
+            yourArray = Operator_Parts_LiftMaster_desc
+        }
+        if catagory == ["Operator_Accesories_LiftMaster"]{
+            yourArray = Operator_Accesories_LiftMaster_desc
+        }
+        if catagory == ["Operator_Accesories_Linear"]{
+            yourArray = Operator_Accesories_Linear_desc
+        }
+        if catagory == ["Operator_Packages_Linear"]{
+            yourArray = Operator_Packages_Linear_desc
+        }
+        if catagory == ["Operator_Packages_Genie"]{
+            yourArray = Operator_Packages_Genie_desc
+        }
+        if catagory == ["Operator_Packages_LiftMaster"]{
+            yourArray = Operator_Packages_LiftMaster_desc
+        }
+        
+    
+        
         tb_view.reloadData()
        
 //

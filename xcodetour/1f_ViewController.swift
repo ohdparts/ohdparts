@@ -59,7 +59,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
    sprg_id.text = spring_id
    wire_size.text = spring_wire_size
    length.text = spring_length
-   quantity.text = "1"
+  
     cones_installed = "Yes"
     tails_out = "No"
     tails_yes_no.text = "No"
@@ -68,7 +68,12 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     shaft = ""
     wind_direction.isEnabled = false
     wind_direction_label.text = ""
-
+        if spring_qty == "" {
+             quantity.text = "1"
+        }
+        else{
+            quantity.text = spring_qty
+        }
         
   //      if sprg_asembly != "single" {
   //      self.spring_assy.setOn(true, animated: true)}
@@ -237,8 +242,14 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
     
         
-
-        
+        if spring_id == "" || spring_wire_size == "" || spring_length == "" {
+            var refreshAlert = UIAlertView()
+            refreshAlert.title = "Parameters Missing"
+            refreshAlert.message = ("One or more required parameters is missing")
+            refreshAlert.addButton(withTitle: "OK")
+            refreshAlert.show()
+        }
+        else {
         if Double(spring_id)! < 3.75 && shaft == "1-1/4sft"{
             var refreshAlert = UIAlertView()
             refreshAlert.title = "Incorrect Shaft Size"
@@ -251,14 +262,6 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
             shaft_label.text = "1\""
         }
         else{
-            if spring_id == "" || spring_wire_size == "" || spring_length == "" {
-                var refreshAlert = UIAlertView()
-                refreshAlert.title = "Parameters Missing"
-                refreshAlert.message = ("One or more required parameters is missing")
-                refreshAlert.addButton(withTitle: "OK")
-                refreshAlert.show()
-            }
-            else {
                 var refreshAlert = UIAlertView()
                 refreshAlert.title = "Spring(s) Added to Cart"
                 refreshAlert.message = ("\(mesg) Qty \(spring_qty)")

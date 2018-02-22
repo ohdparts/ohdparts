@@ -57,7 +57,12 @@ class _i_ViewController: UIViewController {
         inner_wire_size.text = inner_spring_wire_size
         outer_length.text = outer_spring_length
         inner_length.text = inner_spring_length
-        quantity.text = "1"
+        if spring_qty == "" {
+            quantity.text = "1"
+        }
+        else{
+            quantity.text = spring_qty
+        }
         
         outer_spg_id.keyboardType = UIKeyboardType.decimalPad
         inner_spg_id.keyboardType = UIKeyboardType.decimalPad

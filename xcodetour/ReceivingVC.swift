@@ -41,6 +41,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
     var ex_shipping = String()
     var send_to_email = String()
     
+    
     var prodcut = String()
 
     var delete_var = Int()
@@ -99,13 +100,40 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         purchase_order = PO.text!
         job = JOB.text!
         cust_info = Customer_info.text!
-        if purchase_order == "" {
+
+            
+        if purchase_order == "" || cust_info == "" || send_to_email == "" || list.count == 0 {
             var refreshAlert = UIAlertView()
-            refreshAlert.title = "Parameters Missing"
-            refreshAlert.message = ("PO is required")
-            refreshAlert.addButton(withTitle: "OK")
-            refreshAlert.show()
+            
+            if purchase_order == "" {
+                refreshAlert.title = "Parameters Missing"
+                refreshAlert.message = ("PO is required")
+                refreshAlert.addButton(withTitle: "OK")
+                refreshAlert.show()
+            }
+            if cust_info == "" {
+                refreshAlert.title = "Parameters Missing"
+                 refreshAlert.message = ("Customer information required before order can be submitted")
+                refreshAlert.addButton(withTitle: "OK")
+                refreshAlert.show()
+            }
+            if send_to_email == "" {
+                refreshAlert.title = "Parameters Incorrect"
+                refreshAlert.message = ("Order submittal requires a valid entry for the ship to state. Please ensure the state field is capitalized and follows this example for the state of Nevada EX: NV")
+                refreshAlert.addButton(withTitle: "OK")
+                refreshAlert.show()
+            }
+            if  list.count == 0  {
+                var refreshAlert = UIAlertView()
+                refreshAlert.title = "Empty Cart"
+                refreshAlert.message = ("Add one or more items to the shopping cart to submit an order")
+                refreshAlert.addButton(withTitle: "OK")
+                refreshAlert.show()
+            }
+            
         }
+        
+
         else{
             
             // call email order
@@ -125,7 +153,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
-        mailComposerVC.setToRecipients(["jarrad.prida@gmail.com"])
+        mailComposerVC.setToRecipients([(send_to_email)])
               mailComposerVC.setSubject("PO Number: \(purchase_order) Job: \(job)")
            mailComposerVC.setMessageBody("\(cust_info) Product:\(list) Quantity:\(list1) \(ex_shipping)", isHTML: false)
         
@@ -355,16 +383,16 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             //11
         }
         
-        if state == "CO" || state == "NM" || state == "ND" || state == "SD" || state == "NE" || state == "KS" || state == "OK" || state == "TX" || state == "LA" || state == "AK" || state == "MO" || state == "IA" || state == "MN" || state == "AL" || state == "MS" || state == "TN" || state == "KY" || state == "GA" || state == "FL" || state == "MB" || state == "NT" {
+        if state == "CO" || state == "NM" || state == "ND" || state == "SD" || state == "NE" || state == "KS" || state == "OK" || state == "TX" || state == "LA" || state == "AR" || state == "MO" || state == "IA" || state == "MN" || state == "AL" || state == "MS" || state == "TN" || state == "KY" || state == "GA" || state == "FL" || state == "MB" || state == "NT" {
             send_to_email = "ohdpartscentral@ohdparts.com"
             //19
         }
         
-        if state == "WI" || state == "IL" || state == "IN" || state == "MI" || state == "OH" || state == "PA" || state == "WV" || state == "VA" || state == "NC" || state == "SC" || state == "MD" || state == "DE" || state == "NJ" || state == "NY" || state == "CO" || state == "RI" || state == "NH" || state == "VY" || state == "MA" || state == "ME"  || state == "PE"  || state == "QC"  || state == "ON"  || state == "NS"  || state == "NL" || state == "NB" || state == "NU" {
+        if state == "WI" || state == "IL" || state == "IN" || state == "MI" || state == "OH" || state == "PA" || state == "WV" || state == "VA" || state == "NC" || state == "SC" || state == "MD" || state == "DE" || state == "NJ" || state == "NY" || state == "CO" || state == "RI" || state == "NH" || state == "VT" || state == "MA" || state == "ME"  || state == "PE"  || state == "QC"  || state == "ON"  || state == "NS"  || state == "NL" || state == "NB" || state == "NU" {
             send_to_email = "ohdpartseast@ohdparts.com"
             //20
         }
-        
+    
         
         tb?.reloadData()
         

@@ -42,10 +42,10 @@ class ViewController: UIViewController, DataSentDelagate {
             notifications.isEnabled = false
         }
         
+ 
         
         
-        
-        leadingConstraint.constant = -200
+        leadingConstraint.constant = -210
         
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
    // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addTapped))
@@ -100,7 +100,7 @@ class ViewController: UIViewController, DataSentDelagate {
     
     @IBAction func openMenu(_ sender: Any) {
         if (menuShowing) {
-        leadingConstraint.constant = -200
+        leadingConstraint.constant = -210
     }
         else {
         leadingConstraint.constant = 0
@@ -114,7 +114,7 @@ class ViewController: UIViewController, DataSentDelagate {
 
     @IBAction func GO(_ sender: Any) {
         if (menuShowing) {
-            leadingConstraint.constant = -200
+            leadingConstraint.constant = -210
         }
         else {
             leadingConstraint.constant = 0

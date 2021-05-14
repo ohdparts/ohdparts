@@ -103,7 +103,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
 
             
         if purchase_order == "" || cust_info == "" || send_to_email == "" || list.count == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             
             if purchase_order == "" {
                 refreshAlert.title = "Parameters Missing"
@@ -124,7 +124,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 refreshAlert.show()
             }
             if  list.count == 0  {
-                var refreshAlert = UIAlertView()
+                let refreshAlert = UIAlertView()
                 refreshAlert.title = "Empty Cart"
                 refreshAlert.message = ("Add one or more items to the shopping cart to submit an order")
                 refreshAlert.addButton(withTitle: "OK")
@@ -171,25 +171,25 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         switch result {
         case .cancelled:
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Order Cancelled"
             refreshAlert.message = "Order was not submitted"
             refreshAlert.addButton(withTitle: "OK")
             refreshAlert.show()
         case .failed:
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Order Failed"
             refreshAlert.message = "Order was not submitted. Check email settings to ensure a working email account and that you are connected to internet service"
             refreshAlert.addButton(withTitle: "OK")
             refreshAlert.show()
         case .saved:
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Order Saved"
             refreshAlert.message = "Order was saved in your Draft email folder and not submitted"
             refreshAlert.addButton(withTitle: "OK")
             refreshAlert.show()
         case .sent:
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Order Submitted"
             refreshAlert.message = "Thank you for your spring order. We will email you an acknowledgment shortly."
             refreshAlert.addButton(withTitle: "OK")
@@ -268,8 +268,8 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete{
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
            list.remove(at: indexPath.row)
            list1.remove(at: indexPath.row)
             delete_var = indexPath.row
@@ -305,7 +305,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
       
-        var x = UserDefaults.standard.object(forKey: "company") as? String
+        let x = UserDefaults.standard.object(forKey: "company") as? String
         if x == "" || x == nil {
             company_name = "Company Name"
         }
@@ -313,7 +313,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             company_name = x!
         }
         
-        var w = UserDefaults.standard.object(forKey: "address") as? String
+        let w = UserDefaults.standard.object(forKey: "address") as? String
         if w == "" || w == nil  {
             address = "Ship To Address"
         }
@@ -321,7 +321,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             address = w!
         }
         
-        var s = UserDefaults.standard.object(forKey: "city") as? String
+        let s = UserDefaults.standard.object(forKey: "city") as? String
         if s == "" || s == nil {
             city = "City"
         }
@@ -329,7 +329,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             city = s!
         }
         
-        var t = UserDefaults.standard.object(forKey: "zip") as? String
+        let t = UserDefaults.standard.object(forKey: "zip") as? String
         if t == "" || t == nil {
             zip = "Zip Code"
         }
@@ -337,7 +337,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             zip = t!
         }
         
-        var y = UserDefaults.standard.object(forKey: "name") as? String
+        let y = UserDefaults.standard.object(forKey: "name") as? String
         if y == "" || y == nil {
             name = "Customer Name"
         }
@@ -345,21 +345,21 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
             name = y!
         }
         
-        var z = UserDefaults.standard.object(forKey: "state") as? String
+        let z = UserDefaults.standard.object(forKey: "state") as? String
         if z == "" || z == nil {
             state = "State"
         }
         else{
             state = z!
         }
-        var u = UserDefaults.standard.object(forKey: "phone") as? String
+        let u = UserDefaults.standard.object(forKey: "phone") as? String
         if u == "" || u == nil {
             phone_number = "Phone Number"
         }
         else{
             phone_number = u!
         }
-        var v = UserDefaults.standard.object(forKey: "email") as? String
+        let v = UserDefaults.standard.object(forKey: "email") as? String
         if v == "" || v == nil {
             email_address = "Email Address"
         }
@@ -396,7 +396,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         tb?.reloadData()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
 
@@ -405,7 +405,7 @@ class ReceivingVC: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
     }
     
-   func dismissKeyboard() {
+   @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
       view.endEditing(true)
 }

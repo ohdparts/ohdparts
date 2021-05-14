@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     var window: UIWindow?
 
 //OneSignal push service
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: false]
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
        UINavigationBar.appearance().barTintColor = UIColor.gray
         
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         return true
     }

@@ -106,13 +106,13 @@ class _b_ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview: _c_ViewController = segue.destination as! _c_ViewController
+        let destview: _c_ViewController = segue.destination as! _c_ViewController
         destview.labeltext = wire_type
-        var destview1: _c_ViewController = segue.destination as! _c_ViewController
+        let destview1: _c_ViewController = segue.destination as! _c_ViewController
         destview1.labeltext1 = spring_config
-        var destview2: _c_ViewController = segue.destination as! _c_ViewController
+        let destview2: _c_ViewController = segue.destination as! _c_ViewController
         destview2.labeltext2 = lift_type
-    var destview3: _c_ViewController = segue.destination as! _c_ViewController
+        let destview3: _c_ViewController = segue.destination as! _c_ViewController
         destview3.labeltext3 = high_lift_amount
     }
     

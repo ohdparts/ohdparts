@@ -74,24 +74,24 @@ class _i_ViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(ViewController.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
         let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(_f_ViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }
@@ -133,7 +133,7 @@ class _i_ViewController: UIViewController {
     }
     
     @IBAction func qty_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         quantity.text = "\(currentValue)"
         spring_qty = String(currentValue)
     }
@@ -154,14 +154,14 @@ class _i_ViewController: UIViewController {
     
     
     if outer_spring_id == "" || inner_spring_id == "" || outer_spring_wire_size == ""  || inner_spring_wire_size == "" || outer_spring_length == "" || inner_spring_length == ""{
-    var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
     refreshAlert.title = "Parameters Missing"
     refreshAlert.message = ("One or more required parameters is missing")
     refreshAlert.addButton(withTitle: "OK")
     refreshAlert.show()
     }
     else{
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Spring Added to Cart"
         refreshAlert.message = ("\(mesg) \(mesg1) Qty \(qty)")
         refreshAlert.addButton(withTitle: "OK")

@@ -79,7 +79,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
   //      self.spring_assy.setOn(true, animated: true)}
         
 
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 
         view.addGestureRecognizer(tap)
         
@@ -90,21 +90,21 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
         let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }
     
 
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -143,7 +143,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func qty_stepper_click(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         quantity.text = "\(currentValue)"
         spring_qty = String(currentValue)
     }
@@ -243,7 +243,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
         
         if spring_id == "" || spring_wire_size == "" || spring_length == "" {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Parameters Missing"
             refreshAlert.message = ("One or more required parameters is missing")
             refreshAlert.addButton(withTitle: "OK")
@@ -251,7 +251,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         }
         else {
         if Double(spring_id)! < 3.75 && shaft == "1-1/4sft"{
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Incorrect Shaft Size"
             refreshAlert.message = ("Shaft size option 1-1/4\" is not a valid selection for a spring ID under 3.75\"")
             refreshAlert.addButton(withTitle: "OK")
@@ -262,7 +262,7 @@ class _f_ViewController: UIViewController, MFMailComposeViewControllerDelegate {
             shaft_label.text = "1\""
         }
         else{
-                var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
                 refreshAlert.title = "Spring(s) Added to Cart"
                 refreshAlert.message = ("\(mesg) Qty \(spring_qty)")
                 refreshAlert.addButton(withTitle: "OK")

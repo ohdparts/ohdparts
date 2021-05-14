@@ -120,7 +120,7 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             // picker_cycles.isHidden = true
             print((pickerdata[row]))
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
      
         
         if s < 20 {
@@ -140,7 +140,7 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             // picker.isHidden = false
             // picker_cycles.isHidden = true
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
             sprg_id_label.text = String(test1)
             spr_id = String(test1)
             spring_inside_diameter = Double(spr_id)!
@@ -149,7 +149,7 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         }
         
     @IBAction func qty_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         sprg_qty_label.text = "\(currentValue)"
         spring_qty1 = Double(currentValue)
     }
@@ -229,7 +229,7 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
     @IBAction func next(_ sender: Any) {
         if sprg_weight == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Parameters Missing"
             refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
             refreshAlert.addButton(withTitle: "OK")
@@ -241,16 +241,16 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview1: _f_ViewController = segue.destination as! _f_ViewController
+        let destview1: _f_ViewController = segue.destination as! _f_ViewController
         destview1.spring_wire_size = String(wire)
 
-        var destview2: _f_ViewController = segue.destination as! _f_ViewController
+        let destview2: _f_ViewController = segue.destination as! _f_ViewController
         destview2.spring_id = String(spring_inside_diameter)
         
-        var destview3: _f_ViewController = segue.destination as! _f_ViewController
+        let destview3: _f_ViewController = segue.destination as! _f_ViewController
         destview3.spring_length = String(Wire_Length)
         
-        var destview4: _f_ViewController = segue.destination as! _f_ViewController
+        let destview4: _f_ViewController = segue.destination as! _f_ViewController
         destview4.spring_qty = "1"
         
 

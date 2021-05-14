@@ -204,10 +204,10 @@ class Sub_Prodcut_Cat: UIViewController,UITableViewDelegate, UITableViewDataSour
             return yourArray.count
     }
     private func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "sub_product_cell")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "sub_product_cell")
        
             cell.textLabel?.text = yourArray[indexPath.row]
             cell.textLabel?.numberOfLines=0
@@ -227,7 +227,7 @@ class Sub_Prodcut_Cat: UIViewController,UITableViewDelegate, UITableViewDataSour
    
     override func viewDidLoad() {
         super.viewDidLoad()
-    var catagory = [products[cat_index]]
+        let catagory = [products[cat_index]]
         if catagory == ["Angle_Prepunched"]{
             yourArray = Angle_Prepunched_desc
         }
@@ -505,16 +505,16 @@ class Sub_Prodcut_Cat: UIViewController,UITableViewDelegate, UITableViewDataSour
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addTapped))
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
-        var barButton = UIBarButtonItem.init(customView: button)
+        let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
         
     }
     
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }

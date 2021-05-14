@@ -215,7 +215,7 @@ class _h_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBAction func next(_ sender: Any) {
         
         if wire_b == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Parameters Missing"
             refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
             refreshAlert.addButton(withTitle: "OK")
@@ -227,26 +227,26 @@ class _h_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview1: _i_ViewController = segue.destination as! _i_ViewController
+        let destview1: _i_ViewController = segue.destination as! _i_ViewController
         destview1.outer_spring_id = String(outer_sprg_id)
         
-        var destview2: _i_ViewController = segue.destination as! _i_ViewController
+        let destview2: _i_ViewController = segue.destination as! _i_ViewController
         destview2.inner_spring_id = String(inner_sprg_id)
         
-        var destview3: _i_ViewController = segue.destination as! _i_ViewController
+        let destview3: _i_ViewController = segue.destination as! _i_ViewController
         destview3.outer_spring_wire_size = String(wire_b)
         
-        var destview4: _i_ViewController = segue.destination as! _i_ViewController
+        let destview4: _i_ViewController = segue.destination as! _i_ViewController
         destview4.inner_spring_wire_size = String(sec_wire_size)
         
-        var destview5: _i_ViewController = segue.destination as! _i_ViewController
+        let destview5: _i_ViewController = segue.destination as! _i_ViewController
         destview5.outer_spring_length = String(Wire_Length)
         
-        var destview6: _i_ViewController = segue.destination as! _i_ViewController
+        let destview6: _i_ViewController = segue.destination as! _i_ViewController
         destview6.inner_spring_length = String(second_wire_length)
         
-        var destview7: _i_ViewController = segue.destination as! _i_ViewController
-        destview4.spring_qty = String(sprg_count)
+        let destview7: _i_ViewController = segue.destination as! _i_ViewController
+        destview7.spring_qty = String(sprg_count)
  
     }
 
@@ -256,7 +256,7 @@ class _h_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     @IBAction func sprg_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         number_of_springs.text = "\(currentValue)"
         sprg_count = Double(currentValue)
         
@@ -305,8 +305,8 @@ class _h_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             // picker_cycles.isHidden = true
             print((pickerdata[row]))
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
-            test2 = String(test.characters.suffix(5))
+            test1 = String(test.prefix(5))
+            test2 = String(test.suffix(5))
             spring_id.text = String(test)
             spr_id_inner = String(test1)
             return pickerdata[row]}
@@ -328,8 +328,8 @@ class _h_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             // picker.isHidden = false
             // picker_cycles.isHidden = true
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
-            test2 = String(test.characters.suffix(5))
+            test1 = String(test.prefix(5))
+            test2 = String(test.suffix(5))
             spring_id.text = String(test)
             
             //wire_d = [".207",".2187",".2253",".234",".2437",".250",".2625",".273",".283",".289",".295",".3065",".3125",".3195",".331",".3437",".3625",".375",".3938",".4062",".4218",".4375",".4531",".4615",".4687",".4900"]

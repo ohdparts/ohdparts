@@ -220,7 +220,7 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         high_lift_amount = "6"
    //      high_lift_slider = 2
         
-        var angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
+        let angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
         
         
         slider_label.text = "\(currentValue):12"
@@ -235,7 +235,7 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             }
            
         currentValue = currentValue + 1
-        var angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
+        let angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
     
         slider_label.text = "\(currentValue):12"
         pitch = angle_sin[currentValue]
@@ -251,7 +251,7 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 high_lift_label.text = "6in. min"
             }
             currentValue = currentValue - 1
-        var angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
+            let angle_sin: [String] = ["0",".083",".164",".243",".316",".385",".447",".504",".555",".600",".640",".676",".707"]
         
         
         slider_label.text = "\(currentValue):12"
@@ -320,7 +320,7 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     @IBAction func pitch_info(_ sender: Any) {
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Roof Pitch"
         refreshAlert.message = "Roof pitch is expressed as Rise over Run. A Horizontal roof is 0:12 and 45° roof is 12:12"
         
@@ -328,7 +328,7 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         refreshAlert.show()
     }
     @IBAction func drum_chart(_ sender: Any) {
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Drum Compatibility"
         refreshAlert.message = "APCO Drums shown only. Please see ohdparts.com for a complete Drum Compatibility Chart."
         
@@ -337,25 +337,25 @@ class _c_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview1: _e_ViewController = segue.destination as! _e_ViewController
+        let destview1: _e_ViewController = segue.destination as! _e_ViewController
         destview1.labeltext1 = labeltext
         
-        var destview2: _e_ViewController = segue.destination as! _e_ViewController
+        let destview2: _e_ViewController = segue.destination as! _e_ViewController
         destview2.labeltext2 = labeltext1
         
-        var destview3: _e_ViewController = segue.destination as! _e_ViewController
+        let destview3: _e_ViewController = segue.destination as! _e_ViewController
         destview3.labeltext3 = lift_type
         
-        var destview4: _e_ViewController = segue.destination as! _e_ViewController
+        let destview4: _e_ViewController = segue.destination as! _e_ViewController
         destview4.labeltext4 = high_lift_amount
         
-        var destview5: _e_ViewController = segue.destination as! _e_ViewController
+        let destview5: _e_ViewController = segue.destination as! _e_ViewController
         destview5.labeltext5 = drum
         
-        var destview6: _e_ViewController = segue.destination as! _e_ViewController
+        let destview6: _e_ViewController = segue.destination as! _e_ViewController
          destview6.labeltext6 = track_radius
         
-        var destview7: _e_ViewController = segue.destination as! _e_ViewController
+        let destview7: _e_ViewController = segue.destination as! _e_ViewController
         destview7.labeltext7 = pitch
         
         //destview.labeltext8 = labeltext

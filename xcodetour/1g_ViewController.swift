@@ -163,7 +163,7 @@ class _g_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
 
     @IBAction func sprg_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         number_of_springs.text = "\(currentValue)"
         sprg_count = Double(currentValue)
         wire_stepper.value = 0
@@ -196,7 +196,7 @@ class _g_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 max_spring_length_formula = width - ((Wire_Length + cone_width + sprg_stretch) * sprg_count) + (drum_width * 2)
             
             if Wire_Length < 19 || max_spring_length_formula < 1 {
-                    var refreshAlert = UIAlertView()
+                let refreshAlert = UIAlertView()
                     refreshAlert.title = "Solution Failed"
                     refreshAlert.message = "Spring solution using the next larger wire size exceeds available torsion assembly length"
                     refreshAlert.addButton(withTitle: "OK")
@@ -254,7 +254,7 @@ class _g_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                         }
                     }
                     if z == 0 {
-                        var refreshAlert = UIAlertView()
+                        let refreshAlert = UIAlertView()
                         refreshAlert.title = "Solution Failed"
                         refreshAlert.message = "Spring solution exceeds available torsion assembly length and/or wire size or does not meet required cycle life. Changing the number of springs or reducing the required cycle life may allow a spring solution to be computed"
                         refreshAlert.addButton(withTitle: "OK")
@@ -315,7 +315,7 @@ class _g_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             Wire_Length = round(((((Wire_Constant / IPPT) + 6)) * wire_c) * 100) / 100 //6 inactive coils
             max_spring_length_formula = width - ((Wire_Length + cone_width + sprg_stretch) * sprg_count) + (drum_width * 2)
     if Wire_Length < 19 || max_spring_length_formula < 1 {
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Solution Failed"
         refreshAlert.message = "Spring solution using the next larger wire size exceeds available torsion assembly length"
         refreshAlert.addButton(withTitle: "OK")
@@ -372,7 +372,7 @@ wire_calc_stepper: for k in PSI_Factor {
                }
             }
         if z == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Solution Failed"
             refreshAlert.message = "Spring solution exceeds available torsion assembly length and/or wire size or does not meet required cycle life. Changing the number of springs or reducing the required cycle life may allow a spring solution to be computed"
             refreshAlert.addButton(withTitle: "OK")
@@ -395,7 +395,7 @@ wire_calc_stepper: for k in PSI_Factor {
 
     
     @IBAction func wire_size_selection(_ sender: UISlider) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
       
         // set min & max values based on drum selection
         self.Wire_Size_Slider.maximumValue = Float(wire_d.count) - 1
@@ -411,7 +411,7 @@ wire_calc_stepper: for k in PSI_Factor {
     @IBAction func next(_ sender: Any) {
         
         if Wire_Length == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Parameters Missing"
             refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
             refreshAlert.addButton(withTitle: "OK")
@@ -424,16 +424,16 @@ wire_calc_stepper: for k in PSI_Factor {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview1: _f_ViewController = segue.destination as! _f_ViewController
+        let destview1: _f_ViewController = segue.destination as! _f_ViewController
         destview1.spring_id = spr_id
         
-        var destview2: _f_ViewController = segue.destination as! _f_ViewController
+        let destview2: _f_ViewController = segue.destination as! _f_ViewController
         destview2.spring_wire_size = Wire_size_label.text!
         
-        var destview3: _f_ViewController = segue.destination as! _f_ViewController
+        let destview3: _f_ViewController = segue.destination as! _f_ViewController
         destview3.spring_length = String(Wire_Length)
         
-        var destview4: _f_ViewController = segue.destination as! _f_ViewController
+        let destview4: _f_ViewController = segue.destination as! _f_ViewController
         destview4.spring_qty = String(sprg_count)
     }
   
@@ -492,7 +492,7 @@ wire_calc_stepper: for k in PSI_Factor {
             Total_Torq = Torq - Rem_Torq
             Rev_Open_Door = height/Circ_of_Flat
             IPPT = round(((Total_Torq/Rev_Open_Door) * 100) / 100) / sprg_count
-            var IPPT_Label = Double(round(((Total_Torq/Rev_Open_Door) * 100) / 100))
+            let IPPT_Label = Double(round(((Total_Torq/Rev_Open_Door) * 100) / 100))
             Turns = round((Torq/IPPT_Label)*100) / 100
             IPPT_label.text = String(IPPT_Label)
             Turns_label.text = String(Turns)
@@ -503,7 +503,7 @@ wire_calc_stepper: for k in PSI_Factor {
             Rem_Torq = Open_Weight * Flat_MA
             Total_Torq = Torq - Rem_Torq
             Rev_Open_Door = ((height-hi_lift)/Circ_of_Flat + Rev_of_Spiral)
-            var IPPT_Label = Double(round(((Total_Torq/Rev_Open_Door) * 100) / 100))
+            let IPPT_Label = Double(round(((Total_Torq/Rev_Open_Door) * 100) / 100))
             IPPT = round(((Total_Torq/Rev_Open_Door) * 100) / 100) / sprg_count
             Turns = round((Torq/IPPT_Label)*100) / 100
             IPPT_label.text = String(IPPT_Label)
@@ -513,7 +513,7 @@ wire_calc_stepper: for k in PSI_Factor {
         // Long Form calc for vertical lift
         if Lift_Type == "vertical_lift" {
             Torq = weight * High_MA
-            var IPPT_Label = Double(round((weight * 0.375) * 100) / 100)
+            let IPPT_Label = Double(round((weight * 0.375) * 100) / 100)
             IPPT = round(((weight * 0.375) * 100) / 100)/sprg_count //rise per turn factor
             Turns = round((High_MA / 0.375) * 100) / 100 // rise per turn factor
             IPPT_label.text = String(IPPT_Label)
@@ -570,7 +570,7 @@ wirecalc: for i in wire_d {
                             Wire_size_label.text = String(wire_b)
                             Wire_Size_Slider.value = Float(g)
                             if calcd_cycle_life > 1000000 {
-                                Cycles_label.text = String("\(Double(calcd_cycle_life / 1000000), 1)" + "mil")
+                                Cycles_label.text = String("\(Double(calcd_cycle_life / 1000000))" + "mil")
                             }
                             else {
                                 Cycles_label.text = String("\(Int(calcd_cycle_life / 1000))" + "k")
@@ -584,7 +584,7 @@ wirecalc: for i in wire_d {
             }
         }
         if z == 0 {
-        var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Solution Failed"
             refreshAlert.message = "Spring solution exceeds available torsion assembly length and/or wire size or does not meet required cycle life. Changing the number of springs or reducing the required cycle life may allow a spring solution to be computed"
             refreshAlert.addButton(withTitle: "OK")
@@ -628,7 +628,7 @@ wirecalc: for i in wire_d {
         pickerLabel.textAlignment = NSTextAlignment.center
         
         test = String(pickerdata[row])
-        test1 = String(test.characters.prefix(5))
+        test1 = String(test.prefix(5))
         spring_id.text = String(test1)
         spr_id = String(test1)
         
@@ -658,7 +658,7 @@ wirecalc: for i in wire_d {
         
               print((pickerdata[row]))
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
            spring_id.text = String(test1)
             spr_id = String(test1)
             
@@ -679,7 +679,7 @@ wirecalc: for i in wire_d {
             // picker.isHidden = false
             // picker_cycles.isHidden = true
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
             spring_id.text = String(test1)
             
             wire_d = [".207",".2187",".2253",".234",".2437",".250",".2625",".273",".283",".289",".295",".3065",".3125",".3195",".331",".3437",".3625",".375",".3938",".4062",".4218",".4375",".4531",".4615",".4687",".4900"]

@@ -33,27 +33,27 @@ class SendingVC: UIViewController {
         
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReceivingVC.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
         
      state.autocapitalizationType = .allCharacters
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(Sub_Prodcut_Cat.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
         let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -73,7 +73,7 @@ class SendingVC: UIViewController {
         
         if company_name.text == "" || address.text == "" || state.text == "" || city.text == "" || zip.text == "" || name.text == "" || phone_number.text == "" || email_address.text == "" {
             
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Customer Information"
             refreshAlert.message = "Customer information has not been saved. One or more required parameters is missing"
             refreshAlert.addButton(withTitle: "OK")
@@ -82,7 +82,7 @@ class SendingVC: UIViewController {
         }
         else{
 
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Customer Information"
         refreshAlert.message = "Customer information has been saved to this device and can be changed or deleted at any time. "
         refreshAlert.addButton(withTitle: "OK")
@@ -92,7 +92,7 @@ class SendingVC: UIViewController {
     }
 
     @IBAction func Info_Button(_ sender: UIButton) {
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Customer Information"
         refreshAlert.message = "Customer information is saved locally on this device for the ease of ordering and not retained or distributed by the Overhead Door Corporation."
         refreshAlert.addButton(withTitle: "OK")
@@ -100,7 +100,7 @@ class SendingVC: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        var x = UserDefaults.standard.object(forKey: "company") as? String
+        let x = UserDefaults.standard.object(forKey: "company") as? String
         if x == ""{
             company_name.text = ""
         }
@@ -108,7 +108,7 @@ class SendingVC: UIViewController {
             company_name.text = x
         }
         
-        var w = UserDefaults.standard.object(forKey: "address") as? String
+        let w = UserDefaults.standard.object(forKey: "address") as? String
         if w == "" {
             address.text = ""
         }
@@ -116,7 +116,7 @@ class SendingVC: UIViewController {
             address.text = w
         }
         
-        var s = UserDefaults.standard.object(forKey: "city") as? String
+        let s = UserDefaults.standard.object(forKey: "city") as? String
         if s == ""{
             city.text = ""
         }
@@ -124,7 +124,7 @@ class SendingVC: UIViewController {
             city.text = s
         }
         
-        var t = UserDefaults.standard.object(forKey: "zip") as? String
+        let t = UserDefaults.standard.object(forKey: "zip") as? String
         if t == ""{
             zip.text = ""
         }
@@ -132,7 +132,7 @@ class SendingVC: UIViewController {
             zip.text = t
         }
         
-        var y = UserDefaults.standard.object(forKey: "name") as? String
+        let y = UserDefaults.standard.object(forKey: "name") as? String
         if y == ""{
             name.text = ""
         }
@@ -140,21 +140,21 @@ class SendingVC: UIViewController {
             name.text = y
         }
         
-        var z = UserDefaults.standard.object(forKey: "state") as? String
+        let z = UserDefaults.standard.object(forKey: "state") as? String
         if z == ""{
             state.text = ""
         }
         else{
             state.text = z
         }
-        var u = UserDefaults.standard.object(forKey: "phone") as? String
+        let u = UserDefaults.standard.object(forKey: "phone") as? String
         if u == ""{
             phone_number.text = ""
         }
         else{
             phone_number.text = u
         }
-        var v = UserDefaults.standard.object(forKey: "email") as? String
+        let v = UserDefaults.standard.object(forKey: "email") as? String
         if v == "" {
             email_address.text = ""
         }

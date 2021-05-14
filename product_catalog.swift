@@ -19,7 +19,7 @@ class product_catalog: UIViewController, UITableViewDelegate, UITableViewDataSou
         return products.count
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "product_cell")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "product_cell")
         cell.textLabel?.text = products[indexPath.row]
         cell.backgroundColor = UIColor.blue
         cell.textLabel?.textColor = UIColor.white
@@ -37,7 +37,7 @@ class product_catalog: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-tableview.delegate = (self as! UITableViewDelegate)
+        tableview.delegate = (self as UITableViewDelegate)
 tableview.dataSource = self
 
         
@@ -45,16 +45,16 @@ tableview.dataSource = self
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addTapped))
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
-        var barButton = UIBarButtonItem.init(customView: button)
+        let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
         
     }
 
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }

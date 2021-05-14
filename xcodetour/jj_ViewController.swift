@@ -109,7 +109,7 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
   
     @IBAction func qty_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
            spring_count.text = "\(currentValue)"
           spring_qty = Double(currentValue)
     }
@@ -135,7 +135,7 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 pickerLabel.adjustsFontSizeToFitWidth = true
                 pickerLabel.textAlignment = NSTextAlignment.center
                 test = String(pickerdata[row])
-                test1 = String(test.characters.prefix(5))
+                test1 = String(test.prefix(5))
                 spring_id.text = String(test1)
                 spr_id = String(test1)
 
@@ -162,7 +162,7 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             // picker_cycles.isHidden = true
             print((pickerdata[row]))
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
             spring_id.text = String(test1)
             spr_id = String(test1)
           
@@ -187,7 +187,7 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
           
             
             test = String(pickerdata[row])
-            test1 = String(test.characters.prefix(5))
+            test1 = String(test.prefix(5))
             spring_id.text = String(test1)
             spr_id = String(test1)
     
@@ -270,7 +270,7 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
 
     @IBAction func next(_ sender: Any) {
         if sprg_weight == 0 {
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Parameters Missing"
             refreshAlert.message = ("Adjust parameters & Calculate a valid solution")
             refreshAlert.addButton(withTitle: "OK")
@@ -283,47 +283,47 @@ class jj_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
 }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var destview1: _k_ViewController = segue.destination as! _k_ViewController
+        let destview1: _k_ViewController = segue.destination as! _k_ViewController
         destview1.wire_size = String(wire)
         
-        var destview2: _k_ViewController = segue.destination as! _k_ViewController
+        let destview2: _k_ViewController = segue.destination as! _k_ViewController
         destview2.spring_id = test1
         
-        var destview3: _k_ViewController = segue.destination as! _k_ViewController
+        let destview3: _k_ViewController = segue.destination as! _k_ViewController
         destview3.IPPT = (round(IPPT * 100) / 100)
         
-        var destview4: _k_ViewController = segue.destination as! _k_ViewController
+        let destview4: _k_ViewController = segue.destination as! _k_ViewController
         destview4.turns = (round(turns * 100) / 100)
         
-        var destview5: _k_ViewController = segue.destination as! _k_ViewController
+        let destview5: _k_ViewController = segue.destination as! _k_ViewController
         destview5.torque = (torque)
         
-        var destview6: _k_ViewController = segue.destination as! _k_ViewController
+        let destview6: _k_ViewController = segue.destination as! _k_ViewController
         destview6.spring_qty = spring_qty
         
-        var destview7: _k_ViewController = segue.destination as! _k_ViewController
+        let destview7: _k_ViewController = segue.destination as! _k_ViewController
         destview7.sprg_weight = (round(sprg_weight * 100) / 100)
         
-        var destview8: _k_ViewController = segue.destination as! _k_ViewController
+        let destview8: _k_ViewController = segue.destination as! _k_ViewController
         destview8.sprg_length = sprg_length
         
-        var destview9: _k_ViewController = segue.destination as! _k_ViewController
+        let destview9: _k_ViewController = segue.destination as! _k_ViewController
         destview9.spring_id_count1 = spring_id_count
         
-        var destview10: _k_ViewController = segue.destination as! _k_ViewController
+        let destview10: _k_ViewController = segue.destination as! _k_ViewController
         destview10.wire_count1 = wire_count
         
-        var destview11: _k_ViewController = segue.destination as! _k_ViewController
+        let destview11: _k_ViewController = segue.destination as! _k_ViewController
         destview11.wire_grade1 = wire_grade
         
-        var destview12: _k_ViewController = segue.destination as! _k_ViewController
+        let destview12: _k_ViewController = segue.destination as! _k_ViewController
         destview12.IPPT_1 = IPPT
 
     }
   
     
     @IBAction func wire_info(_ sender: UIButton) {
-        var refreshAlert = UIAlertView()
+        let refreshAlert = UIAlertView()
         refreshAlert.title = "Spring Wire Type"
         refreshAlert.message = "Not all torsion spring wire is the same. Springs sold by OHD Parts are all Class II wire as it has much higher tensile strength in the same wire size diameter."
         refreshAlert.addButton(withTitle: "OK")

@@ -51,10 +51,10 @@ class ViewController: UIViewController, DataSentDelagate {
    // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addTapped))
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
-        var barButton = UIBarButtonItem.init(customView: button)
+        let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
         
@@ -85,7 +85,7 @@ class ViewController: UIViewController, DataSentDelagate {
         
     }
     
-    func addTapped (sender:UIButton) {
+    @objc func addTapped (sender:UIButton) {
         //println("add pressed")
     }
     
@@ -138,8 +138,7 @@ class ViewController: UIViewController, DataSentDelagate {
     }
     
     @IBAction func phone_call(_ sender: Any) {
-        UIApplication.shared.openURL(NSURL(string: "tel://8666437278") as! URL)
-        
+        UIApplication.shared.open(NSURL(string: "tel://8666437278")! as URL, options: [:], completionHandler: nil)
         //(866) 643-7278
     }
     
@@ -148,33 +147,33 @@ class ViewController: UIViewController, DataSentDelagate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         if buid == true {
-            var destview: _c_ViewController = segue.destination as! _c_ViewController
+            let destview: _c_ViewController = segue.destination as! _c_ViewController
             destview.labeltext = wire_grade
-            var destview1: _c_ViewController = segue.destination as! _c_ViewController
+            let destview1: _c_ViewController = segue.destination as! _c_ViewController
             spring_config = "single"
             destview1.labeltext1 = spring_config
         }
         if buid_duplex == true {
-            var destview: _c_ViewController = segue.destination as! _c_ViewController
+            let destview: _c_ViewController = segue.destination as! _c_ViewController
             destview.labeltext = wire_grade
-            var destview1: _c_ViewController = segue.destination as! _c_ViewController
+            let destview1: _c_ViewController = segue.destination as! _c_ViewController
             spring_config = "duplex"
             destview1.labeltext1 = spring_config
         }
         if convert == true{
-      var destview1: jj_ViewController = segue.destination as! jj_ViewController
-       destview1.labeltext = wire_grade
+            let destview1: jj_ViewController = segue.destination as! jj_ViewController
+            destview1.labeltext = wire_grade
         }
         
         if customer == true{
-            var destview1: SendingVC = segue.destination as! SendingVC
+            let _: SendingVC = segue.destination as! SendingVC
         }
         if catalog == true{
-            var destview1: product_catalog = segue.destination as! product_catalog
+            let _: product_catalog = segue.destination as! product_catalog
         }
            }
 
-     func cart(_ sender: Any) {
+     @objc func cart(_ sender: Any) {
       
         self.performSegue(withIdentifier: "cart", sender: nil)
     }
@@ -196,11 +195,23 @@ class ViewController: UIViewController, DataSentDelagate {
     
  
     @IBAction func wire_info(_ sender: Any) {
-        var refreshAlert = UIAlertView()
+        /*let refreshAlert = UIAlertView()
         refreshAlert.title = "Spring Wire Type"
         refreshAlert.message = "Springs sold by OHD Parts are all manufactured from Class II wire which has much higher tensile strength than OHD Grade wire."
         refreshAlert.addButton(withTitle: "OK")
-        refreshAlert.show()
+        refreshAlert.show()*/
+        let alertController = UIAlertController(title: "Spring Wire Type",
+                                                   message: "Springs sold by OHD Parts are all manufactured from Class II wire which has much higher tensile strength than OHD Grade wire.",
+                                            preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "OK",
+                                             style: .cancel,
+                                           handler: { (action:UIAlertAction!) in
+                                        
+            })
+        alertController.addAction(cancelAction)
+        self.present(alertController,
+                         animated: true,
+                         completion:nil)
     }
 
     @IBAction func ohd_parts_website(_ sender: Any) {
@@ -225,7 +236,7 @@ class ViewController: UIViewController, DataSentDelagate {
     }
     
     @IBAction func change_notifications(_ sender: Any) {
-        UIApplication.shared.openURL(NSURL(string: UIApplicationOpenSettingsURLString)! as URL)
+        UIApplication.shared.open(NSURL(string: UIApplication.openSettingsURLString)! as URL, options: [:], completionHandler: nil)
         
     }
     

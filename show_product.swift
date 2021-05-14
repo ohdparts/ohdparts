@@ -219,11 +219,11 @@ class show_product: UIViewController {
         product_index_value = 0
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
         
 
@@ -707,23 +707,23 @@ class show_product: UIViewController {
         // navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.addTapped))
         
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControlState.normal)
-        button.addTarget(self, action: "cart:", for: UIControlEvents.touchUpInside)
+        button.setImage(UIImage.init(named: "shopping-cart-icon.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.cart(_:)), for: UIControl.Event.touchUpInside)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30) //CGRectMake(0, 0, 30, 30)
-        var barButton = UIBarButtonItem.init(customView: button)
+        let barButton = UIBarButtonItem.init(customView: button)
         //button.setTitle("123", for: UIControlState.normal)
         self.navigationItem.rightBarButtonItem = barButton
         
     }
     
     
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
             
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 print("Swiped right")
                
                 if product_index_count <= -1  {
@@ -756,7 +756,7 @@ class show_product: UIViewController {
                     }
 
                 }
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 print("Swiped left")
                 
                 if product_index_count > part.count {
@@ -796,7 +796,7 @@ class show_product: UIViewController {
         }
     }
     
-    func cart(_ sender: Any) {
+    @objc func cart(_ sender: Any) {
         
         self.performSegue(withIdentifier: "cart", sender: nil)
     }
@@ -804,14 +804,14 @@ class show_product: UIViewController {
 
     @IBAction func add_to_cart(_ sender: Any) {
         if product_qty == "" || Int(product_qty) == 0{
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Quantity missing"
             refreshAlert.message = "Enter a valid product quantity"
             refreshAlert.addButton(withTitle: "OK")
             refreshAlert.show()
         }
         else{
-            var refreshAlert = UIAlertView()
+            let refreshAlert = UIAlertView()
             refreshAlert.title = "Item Added to Cart"
             refreshAlert.message = ("PN \(prodcut_id) - \(prodcut_description_label.text!) - \(prodcut_cat) Qty \(product_qty)")
             refreshAlert.addButton(withTitle: "OK")
@@ -824,7 +824,7 @@ class show_product: UIViewController {
 
 
     @IBAction func qty_stepper(_ sender: UIStepper) {
-        var currentValue = Int(sender.value)
+        let currentValue = Int(sender.value)
         quantity.text = "\(currentValue)"
         product_qty = String(currentValue)
     }

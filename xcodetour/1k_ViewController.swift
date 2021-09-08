@@ -87,7 +87,7 @@ class _k_ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         length_label.text = String(sprg_length)
         cycles_label.text = "10,000"
         spring_id_count = spring_id_count1
-        picker.selectedRow(inComponent: spring_id_count)
+        //picker.selectedRow(inComponent: spring_id_count)
         wire_slider.value = Float(wire_count1)
         spring_inside_diameter = Double(spring_id)!
         
